@@ -1,0 +1,379 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Score Buttons Row -->
+    <LinearLayout
+        android:id="@+id/scoreBtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:id="@+id/homeScorePlus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="+"
+            android:background="@drawable/btn_green_circle"
+            android:layout_marginLeft="30dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/homeScoreMinus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="-"
+            android:background="@drawable/btn_red_circle"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="209dp"
+            android:textSize="18sp"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/awayScorePlus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="+"
+            android:background="@drawable/btn_green_circle"
+            android:layout_marginLeft="20dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/awayScoreMinus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="-"
+            android:background="@drawable/btn_red_circle"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <!-- Scoreboard -->
+    <LinearLayout
+        android:id="@+id/scoreboard"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/scoreBtns"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:id="@+id/home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/home_green"
+            android:orientation="horizontal"
+            android:border="2dp">
+
+            <TextView
+                android:id="@+id/homeScore"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="HOME - 0"
+                android:textSize="30sp"
+                android:textColor="@color/home_green_text"
+                android:gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/away"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/away_blue"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/awayScore"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="AWAY - 0"
+                android:textSize="30sp"
+                android:textColor="@color/away_blue_text"
+                android:gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Shot Count -->
+    <LinearLayout
+        android:id="@+id/shot_count"
+        android:layout_width="308dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/scoreboard"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:border="2dp">
+
+        <TextView
+            android:id="@+id/homeShots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="60dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/sogLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SOG"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/awayShots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_marginRight="10dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Timer Section -->
+    <LinearLayout
+        android:id="@+id/fullTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/shot_count"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/playBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="▶"
+            android:background="@drawable/btn_play"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/time"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="30dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:border="2dp">
+
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="20:00"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/period"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1st"
+                android:textSize="18sp"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Shot Buttons Row -->
+    <LinearLayout
+        android:id="@+id/shotBtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/fullTimer"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/homeShotPlus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="+"
+            android:background="@drawable/btn_green_circle"
+            android:layout_marginLeft="30dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/homeShotMinus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="-"
+            android:background="@drawable/btn_red_circle"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="209dp"
+            android:textSize="18sp"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/awayShotPlus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="+"
+            android:background="@drawable/btn_green_circle"
+            android:layout_marginLeft="20dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/awayShotMinus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="-"
+            android:background="@drawable/btn_red_circle"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <!-- Save Percentage -->
+    <LinearLayout
+        android:id="@+id/savePct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/shotBtns"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/savePctHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SAVE %:"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/savePctHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HOME: N/A"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/savePctAway"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AWAY: N/A"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp" />
+    </LinearLayout>
+
+    <!-- Chances -->
+    <LinearLayout
+        android:id="@+id/chances"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/savePct"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/chancesHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHANCES:"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/chancesHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOME: 0"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/homeChancePlus"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="+"
+                android:background="@drawable/btn_green_circle"
+                android:layout_marginLeft="10dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/homeChanceMinus"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="-"
+                android:background="@drawable/btn_red_circle"
+                android:layout_marginLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/chancesAway"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AWAY: 0"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/awayChancePlus"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="+"
+                android:background="@drawable/btn_green_circle"
+                android:layout_marginLeft="10dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/awayChanceMinus"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="-"
+                android:background="@drawable/btn_red_circle"
+                android:layout_marginLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Reset Button -->
+    <Button
+        android:id="@+id/resetGame"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="RESET"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/btn_reset"
+        android:textSize="20sp"
+        android:textColor="@color/reset_text"
+        android:textStyle="bold" />
+
+</RelativeLayout>
