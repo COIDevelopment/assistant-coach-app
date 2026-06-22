@@ -1,7 +1,6 @@
 # assistant-coach-app
 This app is primarily for hockey but works with any sport where you shoot something at a net with a goalie.
 The user keeps track of goals, shots, and scoring chances while the app automatically calculates live save percentage.
-At the end of the game, click the "End Game" button and all of the data will be downloaded onto your device
-
+At the end of the game, click the "End Game" button and all of the data will be downloaded onto your device 
 PRIVACY POLICY: 
 The app downloads score, shot, chance, period, date and time data and stores it strictly locally on your device. All of the score, shot, chance, and period data comes directly from the app's interface and can be mutated by the user. No data is transmitted to external servers or shared with third parties. Users can clear all application data at any time through their device's native app management settings.
